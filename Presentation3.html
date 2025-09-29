@@ -330,6 +330,52 @@
             cursor: not-allowed;
             transform: none;
         }
+        /* --- put this ABOVE @media --- */
+.h-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 40px auto;
+  max-width: 800px;
+  position: relative;
+  padding: 0 10px;
+}
+
+.h-timeline::before {
+  content: '';
+  position: absolute;
+  top: 15px;   /* aligns with dots */
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #4cc2c4;
+  z-index: 1;
+}
+
+.h-timeline-item {
+  text-align: center;
+  position: relative;
+  flex: 1;
+}
+
+.h-timeline-dot {
+  width: 20px;
+  height: 20px;
+  background: #4cc2c4;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  position: relative;
+  z-index: 2;
+  border: 3px solid #fff; /* optional white ring */
+  box-shadow: 0 0 0 2px #4cc2c4;
+}
+
+.h-timeline-item p {
+  margin-top: 0;
+  font-size: 1rem;
+  color: #343434;
+}
+
         @media (max-width: 768px) {
             .presentation-container {
                 padding: 10px;
@@ -358,17 +404,6 @@
                 transform: none;
                 width: auto;
             }
-/* Horizontal timeline */
-.h-timeline {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 40px auto;
-  max-width: 800px;
-  position: relative;
-  padding: 0 10px;
-}    
-     
         }
     </style>
 </head>
